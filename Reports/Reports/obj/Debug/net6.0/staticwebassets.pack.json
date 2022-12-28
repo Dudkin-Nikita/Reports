@@ -5,16 +5,12 @@
       "PackagePath": "staticwebassets\\Reports.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\user\\Documents\\CIITU\\Reports\\Reports\\wwwroot\\css\\fontawesome-all.min.css",
-      "PackagePath": "staticwebassets\\css\\fontawesome-all.min.css"
-    },
-    {
       "Id": "C:\\Users\\user\\Documents\\CIITU\\Reports\\Reports\\wwwroot\\css\\main.css",
       "PackagePath": "staticwebassets\\css\\main.css"
     },
     {
-      "Id": "C:\\Users\\user\\Documents\\CIITU\\Reports\\Reports\\wwwroot\\favicon.ico",
-      "PackagePath": "staticwebassets\\favicon.ico"
+      "Id": "C:\\Users\\user\\Documents\\CIITU\\Reports\\Reports\\wwwroot\\css\\main.min.css",
+      "PackagePath": "staticwebassets\\css\\main.min.css"
     },
     {
       "Id": "C:\\Users\\user\\Documents\\CIITU\\Reports\\Reports\\wwwroot\\images\\banner.jpg",

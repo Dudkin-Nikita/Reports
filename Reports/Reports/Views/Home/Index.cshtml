@@ -8,20 +8,20 @@
     <div>
         <h3>Отчеты</h3>
         <div class="div-box">
-            <form asp-controller="Reports" asp-action="Edit">
-                <input type="submit" value="Добавить отчет" />
-            </form>
+            <a asp-controller="Reports" asp-action="Create">Создать</a>
+             <br />
         </div>
         @if (Model.Any())
         {
             @foreach (Report entity in Model)
             {
                 <div>
-                    <a asp-controller="Reports" asp-action="Edit" asp-route-id="@entity.Id">Редактировать отчет</a>
-                    |
-                    <a asp-controller="Reports" asp-action="Index" asp-route-id="@entity.Id">
-                        @($"{entity.Address}")
-                    </a>
+                    <a asp-controller="Reports" asp-action="Edit" asp-route-id="@entity.Id">Редактировать</a><br />
+                    <a asp-controller="Items" asp-action="Create" asp-route-id="@entity.Id">Создать товары</a><br />
+                    <a asp-controller="Items" asp-action="Edit" asp-route-id="@entity.Id">Редактировать товары</a><br />
+                    @($"Начало периода - {entity.StartDate} ") | @($"Конец периода - {entity.EndDate} ") | @($"Адрес - {entity.Address} ") | @($"Кол-во позиций на складе - {entity.ItemsCount} ")
+                    <br />
+                    <br />
                 </div>
             }
         }
@@ -33,8 +33,9 @@
 }
 else
 {
-    <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>  
+    <div class="div-box">
+        <form asp-controller="Account" asp-action="Login">
+            <input type="submit" value="Войти" />
+        </form>
+    </div>
 }

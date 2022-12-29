@@ -31,6 +31,11 @@ namespace Reports.Domain.Repositories.EntityFramework
         }
         public void UpdateEntity(Report entity)
         {
+            List<Item> items = context.Items.Where(x => x.Report == entity).ToList();
+            foreach (Item item in items)
+            {
+                context.Items.Remove(item);
+            }
             context.Entry(entity).State = EntityState.Modified;
             context.SaveChanges();
         }

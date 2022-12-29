@@ -60,7 +60,8 @@ namespace Reports.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ItemsCount = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -179,8 +180,8 @@ namespace Reports.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Amount = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Amount = table.Column<int>(type: "int", nullable: true),
                     ReportId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -196,7 +197,7 @@ namespace Reports.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LastSystemEnter", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "UserType" },
-                values: new object[] { "A6B399DC-1F54-448A-A267-CFA45D3FF03B", 0, "ec0ba4fe-98a8-4ec6-8e23-bd6aa015ce24", "nikd926@gmail.com", true, new DateTime(2022, 12, 29, 10, 55, 28, 839, DateTimeKind.Utc).AddTicks(873), false, null, "NIKD926@GMAIL.COM", "ADMIN", "AQAAAAEAACcQAAAAECuYMOw93Afq0a3+VcW8v52CXyEd/FJ14UwiftAsEXxvejPf5SZEfKUxLhUhbCbfFA==", null, false, "", false, "admin", 2 });
+                values: new object[] { "A6B399DC-1F54-448A-A267-CFA45D3FF03B", 0, "6288091b-f07a-47bd-8b29-b43364e6e19a", "nikd926@gmail.com", true, new DateTime(2022, 12, 29, 19, 53, 38, 203, DateTimeKind.Utc).AddTicks(4489), false, null, "NIKD926@GMAIL.COM", "ADMIN", "AQAAAAEAACcQAAAAEBKKKo83iw5SSYfdxX1pcmOHLK2y9RWVt20JTGHpaenI+FvuICoQPnEcRt+PyFrgww==", null, false, "", false, "admin", 2 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

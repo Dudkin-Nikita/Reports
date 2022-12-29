@@ -12,7 +12,7 @@ using Reports.Domain;
 namespace Reports.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221229105529__initial")]
+    [Migration("20221229195338__initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -166,11 +166,10 @@ namespace Reports.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Amount")
+                    b.Property<int?>("Amount")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ReportId")
@@ -197,6 +196,9 @@ namespace Reports.Migrations
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("ItemsCount")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
@@ -281,14 +283,14 @@ namespace Reports.Migrations
                         {
                             Id = "A6B399DC-1F54-448A-A267-CFA45D3FF03B",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ec0ba4fe-98a8-4ec6-8e23-bd6aa015ce24",
+                            ConcurrencyStamp = "6288091b-f07a-47bd-8b29-b43364e6e19a",
                             Email = "nikd926@gmail.com",
                             EmailConfirmed = true,
-                            LastSystemEnter = new DateTime(2022, 12, 29, 10, 55, 28, 839, DateTimeKind.Utc).AddTicks(873),
+                            LastSystemEnter = new DateTime(2022, 12, 29, 19, 53, 38, 203, DateTimeKind.Utc).AddTicks(4489),
                             LockoutEnabled = false,
                             NormalizedEmail = "NIKD926@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAECuYMOw93Afq0a3+VcW8v52CXyEd/FJ14UwiftAsEXxvejPf5SZEfKUxLhUhbCbfFA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBKKKo83iw5SSYfdxX1pcmOHLK2y9RWVt20JTGHpaenI+FvuICoQPnEcRt+PyFrgww==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,

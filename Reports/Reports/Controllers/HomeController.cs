@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Reports.Domain;
 using Reports.Models;
 using System.Diagnostics;
 
@@ -6,21 +7,15 @@ namespace Reports.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly DataManager dataManager;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(DataManager dataManager)
         {
-            _logger = logger;
+            this.dataManager = dataManager;
         }
-
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
+            return View(dataManager.Reports.GetEntities());
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,0 +1,32 @@
+﻿@model Report
+
+<div>
+    <h2>"Редактирование отчета"</h2>
+    <div>
+        <form asp-controller="Reports" asp-action="Edit" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All"></div>
+            <div class="div-box">
+                <label asp-for="StartDate"></label>
+                <input asp-for="StartDate" />
+                <span asp-validation-for="StartDate"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="EndDate"></label>
+                <input asp-for="EndDate" />
+                <span asp-validation-for="EndDate"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="Address"></label>
+                <input asp-for="Address" />
+                <span asp-validation-for="Address"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="ItemsCount"></label>
+                <input asp-for="ItemsCount" />
+                <span asp-validation-for="ItemsCount"></span>
+            </div>
+            <input type="submit" value="Сохранить" />
+        </form>
+        <h2>После редактирования отчета все его товары удаляются. Сойдайте их заново</h2>
+    </div>
+</div>

@@ -14,7 +14,7 @@ namespace Reports.Domain.Entities
         public string Address { get; set;} = string.Empty;
 
         [Display(Name = "Количество позиций на складе")]
-        public int Count { get; set; }
+        public int ItemsCount { get; set; }
 
         public ICollection<Item> Items { get; set; } = new List<Item>();
     }

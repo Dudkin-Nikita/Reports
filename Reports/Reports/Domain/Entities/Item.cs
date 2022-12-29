@@ -9,6 +9,6 @@ namespace Reports.Domain.Entities
 
         [Display(Name = "Количество товара")]
         public int Amount { get; set; }
-        public ICollection<Report> Reports { get; set; } = new List<Report>();
+        public Report? Report { get; set; }
     }
 }

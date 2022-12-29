@@ -1,12 +1,19 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Reports.Domain;
+using Reports.Domain.Entities;
+using Reports.Domain.Repositories.Abstract;
+using Reports.Domain.Repositories.EntityFramework;
 using Reports.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddTransient<IRepository<Item>, EFItemRepository>();
+builder.Services.AddTransient<IRepository<Report>, EFReportRepository>();
+builder.Services.AddTransient<DataManager>();
 
 builder.Services.AddDbContext<AppDbContext>
     (x => x.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));

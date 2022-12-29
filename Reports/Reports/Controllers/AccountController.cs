@@ -38,6 +38,7 @@ namespace Reports.Controllers
                     else
                     {
                         user.UserType = UserTypes.Active;
+                        user.LastSystemEnter = DateTime.UtcNow;
                         await _userManager.UpdateAsync(user);
                         if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
                         {

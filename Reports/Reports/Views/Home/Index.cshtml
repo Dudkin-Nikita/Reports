@@ -1,10 +1,31 @@
-﻿@{
+﻿@model IQueryable<Report>
+@{
     ViewData["Title"] = "Home Page";
 }
 
 @if (User.Identity.IsAuthenticated)
 {
-    <p>@User.Identity.Name</p>
+    <div>
+        <h3>Отчеты</h3>
+        <div class="div-box">
+            <form asp-controller="Reports" asp-action="Edit">
+                <input type="submit" value="Добавить отчет" />
+            </form>
+        </div>
+        @if (Model.Any())
+        {
+            @foreach (Report entity in Model)
+            {
+                <div>
+                    <a asp-controller="Reports" asp-action="Edit" asp-route-id="@entity.Id">Редактировать отчет</a>
+                    |
+                    <a asp-controller="Reports" asp-action="Index" asp-route-id="@entity.Id">
+                        @($"{entity.Address}")
+                    </a>
+                </div>
+            }
+        }
+    </div>
 
     <form method="post" asp-controller="Account" asp-action="Logout">
         <input type="submit" value="Выход" />

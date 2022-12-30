@@ -7,6 +7,28 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <ListBox x:Name="usersList" ItemsSource="{Binding}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="Пользователь:"/>
+                        <TextBlock Text="{Binding Name}" FontSize="10" />
+                        <TextBlock Text="{Binding UserName}" FontSize="10" />
+                        <TextBlock Text="{Binding UserType}" FontSize="10" />
+                        <TextBlock Text="{Binding LastSystemEnter}" FontSize="10" />
+                        <TextBlock />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Добавить пользователя" Margin="10" Click="Add_Click" />
+            <Button Content="Заблокировать" Margin="10" Click="Block_Click"  />
+            <Button Content="Разблокировать" Margin="10" Click="UnBlock_Click"  />
+        </StackPanel>
     </Grid>
 </Window>

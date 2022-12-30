@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Reports.Domain.Entities;
 using Reports.Models;
+using System.Reflection.Emit;
 
 namespace Reports.Domain
 {

@@ -8,8 +8,8 @@ namespace WpfAdmin
 {
     public enum UserTypes
     {
-        Fresh,
-        Active,
-        Blocked
+        Fresh = 0,
+        Active = 1,
+        Blocked = 2
     }
 }

@@ -20,7 +20,6 @@ builder.Services.AddDbContext<AppDbContext>
 
 builder.Services.AddIdentity<User, IdentityRole>(opts =>
 {
-    opts.User.RequireUniqueEmail = true;
     opts.Password.RequiredLength = 6;
     opts.Password.RequireNonAlphanumeric = false;
     opts.Password.RequireLowercase = false;

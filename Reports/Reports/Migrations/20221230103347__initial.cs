@@ -30,6 +30,7 @@ namespace Reports.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastSystemEnter = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UserType = table.Column<int>(type: "int", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -193,11 +194,6 @@ namespace Reports.Migrations
                         principalTable: "Reports",
                         principalColumn: "Id");
                 });
-
-            migrationBuilder.InsertData(
-                table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LastSystemEnter", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "UserType" },
-                values: new object[] { "A6B399DC-1F54-448A-A267-CFA45D3FF03B", 0, "6288091b-f07a-47bd-8b29-b43364e6e19a", "nikd926@gmail.com", true, new DateTime(2022, 12, 29, 19, 53, 38, 203, DateTimeKind.Utc).AddTicks(4489), false, null, "NIKD926@GMAIL.COM", "ADMIN", "AQAAAAEAACcQAAAAEBKKKo83iw5SSYfdxX1pcmOHLK2y9RWVt20JTGHpaenI+FvuICoQPnEcRt+PyFrgww==", null, false, "", false, "admin", 2 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

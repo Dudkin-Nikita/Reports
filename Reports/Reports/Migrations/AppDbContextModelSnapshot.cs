@@ -233,6 +233,10 @@ namespace Reports.Migrations
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -274,26 +278,6 @@ namespace Reports.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "A6B399DC-1F54-448A-A267-CFA45D3FF03B",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "6288091b-f07a-47bd-8b29-b43364e6e19a",
-                            Email = "nikd926@gmail.com",
-                            EmailConfirmed = true,
-                            LastSystemEnter = new DateTime(2022, 12, 29, 19, 53, 38, 203, DateTimeKind.Utc).AddTicks(4489),
-                            LockoutEnabled = false,
-                            NormalizedEmail = "NIKD926@GMAIL.COM",
-                            NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBKKKo83iw5SSYfdxX1pcmOHLK2y9RWVt20JTGHpaenI+FvuICoQPnEcRt+PyFrgww==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "",
-                            TwoFactorEnabled = false,
-                            UserName = "admin",
-                            UserType = 2
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

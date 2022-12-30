@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\user\Documents\CIITU\WpfAdmin\WpfAdmin\App.xaml
-11407045341
+21098397569
 
-72030249123
+8-1413367643
 2251950022620
-MainWindow.xaml;
+MainWindow.xaml;UserWindow.xaml;
 
-False
+True
 

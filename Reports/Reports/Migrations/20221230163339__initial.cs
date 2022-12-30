@@ -195,11 +195,6 @@ namespace Reports.Migrations
                         principalColumn: "Id");
                 });
 
-            migrationBuilder.InsertData(
-                table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LastSystemEnter", "LockoutEnabled", "LockoutEnd", "Name", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "UserType" },
-                values: new object[] { "A6B399DC-1F54-448A-A267-CFA45D3FF03B", 0, "2a7688cc-4f2b-4d78-83bf-27efd8032b4c", null, true, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), false, null, "", null, "ADMIN", "AQAAAAEAACcQAAAAEDUK7tVpMjtBKA/ZrQFTkkXnU4Tq+ldoWX/yPryCoGS4wU26tYty7oGjjzox2V9ROQ==", null, false, "", false, "admin", 0 });
-
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",

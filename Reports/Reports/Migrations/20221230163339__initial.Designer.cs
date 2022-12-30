@@ -12,7 +12,7 @@ using Reports.Domain;
 namespace Reports.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221230122847__initial")]
+    [Migration("20221230163339__initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -281,25 +281,6 @@ namespace Reports.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "A6B399DC-1F54-448A-A267-CFA45D3FF03B",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "2a7688cc-4f2b-4d78-83bf-27efd8032b4c",
-                            EmailConfirmed = true,
-                            LastSystemEnter = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LockoutEnabled = false,
-                            Name = "",
-                            NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDUK7tVpMjtBKA/ZrQFTkkXnU4Tq+ldoWX/yPryCoGS4wU26tYty7oGjjzox2V9ROQ==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "",
-                            TwoFactorEnabled = false,
-                            UserName = "admin",
-                            UserType = 0
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

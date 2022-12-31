@@ -27,12 +27,10 @@ namespace Reports.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = await _userManager.FindByNameAsync(model.UserName);
-                var s = user;
                 var result = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, false);
                 if (result.Succeeded)
                 {
-                    //User user = await _userManager.FindByNameAsync(model.UserName);
+                    User user = await _userManager.FindByNameAsync(model.UserName);
                     if (user.UserType == UserTypes.Blocked)
                     {
                         ModelState.AddModelError("", "Этот пользователь заблокирован");
@@ -40,7 +38,7 @@ namespace Reports.Controllers
                     else
                     {
                         user.UserType = UserTypes.Active;
-                        user.LastSystemEnter = DateTime.UtcNow;
+                        user.LastSystemEnter = DateTime.Now;
                         await _userManager.UpdateAsync(user);
                         if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
                         {
